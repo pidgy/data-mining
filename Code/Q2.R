@@ -42,7 +42,7 @@ rules.invoice.description <- apriori(transactions.invoice.description, parameter
 summary(rules.invoice.description)
 # inspect the rules
 inspect(rules.invoice.description)
-
+# sort lift values in decreasing order
 top.lift <- sort(rules.invoice.description, decreasing = TRUE, na.last = NA, by = "lift")
 inspect(head(top.lift, 10)) 
 
