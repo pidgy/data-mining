@@ -10,10 +10,10 @@ dir.retail <- "retail"
 code.dir   <- paste(dir.root, dir.code,             sep="/")
 data.dir   <- paste(dir.root, dir.data,             sep="/")
 # File constants 
-file       <- paste(data.dir, "cars.data",          sep="/")
-file.rows  <- paste(data.dir, "cars.names",         sep="/")
-file.cols  <- paste(data.dir, "cars.data.des",      sep="/")
-file       <- paste(data.dir, "Online Retail.xlsx", sep="/")
+file.cars       <- paste(data.dir, "cars.data",          sep="/")
+file.cars.rows  <- paste(data.dir, "cars.names",         sep="/")
+file.cars.cols  <- paste(data.dir, "cars.data.des",      sep="/")
+file.retail     <- paste(data.dir, "Online Retail.xlsx", sep="/")
 # Imported libraries
 library(readxl)
 library(sets)

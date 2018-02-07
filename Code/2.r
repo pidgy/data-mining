@@ -1,11 +1,12 @@
-wd <- "." # Set me
-source(paste(wd, "Common.R", sep="/"))
+if (!exists("file.retail")) {
+  print ("common.r needs to be sourced")
+}
 ######################################################
 # d.retail Class
 #
 # get.<property> will return a column value for a specified row
 ######################################################
-d.retail        <- read_xlsx(file)
+d.retail        <- read_xlsx(file.retail)
 ######################################################
 #constants
 COUNTRY         <- "Country"

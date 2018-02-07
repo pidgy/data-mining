@@ -1,5 +1,6 @@
-wd <- "." # set me
-source(paste(wd, "Common.R", sep="/"))
+if (!exists("file.cars")) {
+  print ("common.r needs to be sourced")
+}
 ######################################################
 # Scan the datasets and store the parsed data
 # 
@@ -7,10 +8,10 @@ source(paste(wd, "Common.R", sep="/"))
 # d.cols | The column names for vehicle metadata (vehicle measurment variables)
 # d.rows | The row names for vehicle metadata (nehicle names) 
 ######################################################
-d.cars           <- read.table(file)
+d.cars           <- read.table(file.cars)
 d.rows           <- noquote(scan(d.names, ""))
 rexp             <- "^(\\w+)\\s?(.*)$" # regex expression to trim 'REAL n' values
-d.cols           <- scan (file.cols, what ="a", sep ="\n")
+d.cols           <- scan (file.cars.cols, what ="a", sep ="\n")
 d.cols           <- sub(rexp,"\\1",d.cols) 
 n.cols           <- length(d.rows)
 n.rows           <- length(d.cols)
