@@ -1,4 +1,4 @@
-wd <- ""
+wd <- "." # set me
 source(paste(wd, "Common.R", sep="/"))
 ######################################################
 # Scan the datasets and store the parsed data
@@ -7,13 +7,13 @@ source(paste(wd, "Common.R", sep="/"))
 # d.cols | The column names for vehicle metadata (vehicle measurment variables)
 # d.rows | The row names for vehicle metadata (nehicle names) 
 ######################################################
-d.cars <- read.table(file)
-d.rows <- noquote(scan(d.names, ""))
-rexp <- "^(\\w+)\\s?(.*)$" # regex expression to trim 'REAL n' values
-d.cols <- scan (file.cols, what ="a", sep ="\n")
-d.cols <- sub(rexp,"\\1",d.cols) 
-n.cols <- length(d.rows)
-n.rows <- length(d.cols)
+d.cars           <- read.table(file)
+d.rows           <- noquote(scan(d.names, ""))
+rexp             <- "^(\\w+)\\s?(.*)$" # regex expression to trim 'REAL n' values
+d.cols           <- scan (file.cols, what ="a", sep ="\n")
+d.cols           <- sub(rexp,"\\1",d.cols) 
+n.cols           <- length(d.rows)
+n.rows           <- length(d.cols)
 colnames(d.cars) <- d.cols
 #rownames(d.cars) <- d.rows
 ######################################################
@@ -26,7 +26,6 @@ colnames(d.cars) <- d.cols
 panel.smooth.asp <- function (x, y, col = par("col"), bg = NA, pch = par("pch"), 
                               cex = 1, col.smooth = "red", span = 2/3, iter = 3, asp,...) 
 {
-  #browser()
   points(x, y, pch = pch, col = col, bg = bg, cex = cex, asp=1)
   ok <- is.finite(x) & is.finite(y)
   if (any(ok)) 

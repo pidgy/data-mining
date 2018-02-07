@@ -1,22 +1,21 @@
-wd <- ""
+wd <- "." # Set me
 source(paste(wd, "Common.R", sep="/"))
-source("Common.R")
 ######################################################
 # d.retail Class
 #
 # get.<property> will return a column value for a specified row
 ######################################################
-d.retail <- read_xlsx(file)
+d.retail        <- read_xlsx(file)
 ######################################################
 #constants
-COUNTRY <- "Country"
-CUSTOMER.ID <- "CustomerID"
-DESCRIPTION <- "Description"
-INVOICE.NO <- "InvoiceNo"
-INVOICE.DATE <- "InvoiceDate"
-QUANTITY <- "Quantity"
-STOCK.CODE <- "StockCode"
-UNIT.PRICE <- "UnitPrice"
+COUNTRY         <- "Country"
+CUSTOMER.ID     <- "CustomerID"
+DESCRIPTION     <- "Description"
+INVOICE.NO      <- "InvoiceNo"
+INVOICE.DATE    <- "InvoiceDate"
+QUANTITY        <- "Quantity"
+STOCK.CODE      <- "StockCode"
+UNIT.PRICE      <- "UnitPrice"
 # getters for retail properties at row <r> or rows<ri:ri+n>
 get.invoice     <- function(r,d=d.retail)     {d[r,"InvoiceNo"]}
 get.stockcode   <- function(r,d=d.retail)     {d[r,"StockCode"]}
